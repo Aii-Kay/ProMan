@@ -1,4 +1,4 @@
-package property.model; // selesai
+package property.model; 
 
 public class Buyer extends User {
     public Buyer(String username, String password) {

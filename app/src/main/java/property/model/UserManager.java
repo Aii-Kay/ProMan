@@ -1,4 +1,4 @@
-package property.model; // selesai
+package property.model; 
 
 import java.io.*;
 import java.util.*;
@@ -23,6 +23,7 @@ public class UserManager implements Authenticable {
         }
         return false;
     }
+    
     @Override
     public void logout() {
         Session.clear();

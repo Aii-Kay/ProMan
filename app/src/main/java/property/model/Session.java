@@ -1,4 +1,4 @@
-package property.model; // selesai
+package property.model;
 
 public class Session {
     private static User currentUser;

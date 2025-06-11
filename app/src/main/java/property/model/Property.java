@@ -1,4 +1,4 @@
-package property.model; // selesai
+package property.model;
 
 public class Property {
     private int id;

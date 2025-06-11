@@ -1,4 +1,4 @@
-package property.model; // selesai
+package property.model; 
 
 abstract class User {
     private String username;
@@ -25,5 +25,5 @@ abstract class User {
         this.password = password;
     }
 
-    abstract String getRole(); // public? default? private?
+    abstract String getRole(); 
 }

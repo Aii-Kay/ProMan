@@ -1,5 +1,5 @@
 package property.model;
 
-enum PropertyStatus {
-    
+public enum PropertyStatus {
+    TERSEDIA, TERJUAL
 }

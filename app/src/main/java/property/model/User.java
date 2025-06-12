@@ -1,6 +1,6 @@
 package property.model; 
 
-abstract class User {
+public abstract class User {
     private String username;
     private String password;
 
@@ -25,5 +25,5 @@ abstract class User {
         this.password = password;
     }
 
-    abstract String getRole(); 
+    public abstract String getRole(); 
 }

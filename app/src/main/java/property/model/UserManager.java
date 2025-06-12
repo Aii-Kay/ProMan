@@ -5,7 +5,7 @@ import java.util.*;
 
 public class UserManager implements Authenticable {
     private List<User> users;
-    private final String FILE_PATH = "users.csv";
+    private final String FILE_PATH = "app/src/main/java/property/data/users.csv";
 
     public UserManager() {
         users = new ArrayList<>();

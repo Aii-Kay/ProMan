@@ -6,7 +6,7 @@ public class Buyer extends User {
     }
     
     @Override
-    String getRole() {
+    public String getRole() {
         return "Buyer";
     }
     

@@ -14,8 +14,8 @@ ProMan adalah sebuah aplikasi yang dapat membantu transaksi jual-beli properti. 
 
 
 ### 🔐 Login dan Registrasi
-- Pengguna bisa registrasi sebagai *Admin* atau *Buyer*
-- Login dilakukan melalui input username dan password
+- Pengguna dapat registrasi sebagai **Admin** atau **Buyer**
+- Login dan Registrasi dilakukan melalui input username dan password
 
 ## 🕹 Cara Instalasi & Jalankan Aplikasi
 1. Clone Repository

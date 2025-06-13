@@ -2,6 +2,10 @@ package property;
 
 import property.model.*;
 
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Scanner;
 
@@ -153,6 +157,26 @@ public class MainApp {
             System.out.print("Nama Properti: ");
             String nama = input.nextLine();
 
+            System.out.print("Path gambar properti: ");
+            String imagePath = input.nextLine();
+
+            Path sourcePath = Paths.get(imagePath);
+            if (!Files.exists(sourcePath)) {
+                System.out.println("File gambar tidak ditemukan.");
+                return;
+            }
+
+            String fileName = sourcePath.getFileName().toString();
+
+            Path imagesDir = Paths.get("images");
+            if (!Files.exists(imagesDir)) {
+                Files.createDirectories(imagesDir);
+            }
+
+            Path targetPath = imagesDir.resolve(fileName);
+            Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+
+
             System.out.println("Tipe Properti:");
             for (PropertyType type : PropertyType.values()) {
                 System.out.println("- " + type);
@@ -163,7 +187,7 @@ public class MainApp {
             System.out.print("Harga: ");
             double harga = Double.parseDouble(input.nextLine());
 
-            Property p = new Property(id, nama, type, harga, PropertyStatus.TERSEDIA);
+            Property p = new Property(id, nama, type, harga, PropertyStatus.TERSEDIA, imagePath);
             pm.addProperty(p);
             System.out.println("Properti berhasil ditambahkan.");
 
@@ -262,14 +286,13 @@ public class MainApp {
             }
         }
 
-        // Ubah status menggunakan PropertyManager
         pm.markAsSold(id);
         System.out.println("Properti berhasil dibeli dan status diubah menjadi TERJUAL.");
     }
 
     private static void delayPembayaran() {
         try {
-            Thread.sleep(2000); // jeda 2 detik
+            Thread.sleep(2000); 
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

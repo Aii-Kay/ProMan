@@ -65,14 +65,15 @@ public class PropertyManager {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length == 5) {
+                if (parts.length == 6) {
                     int id = Integer.parseInt(parts[0]);
                     String nama = parts[1];
                     PropertyType type = PropertyType.valueOf(parts[2].toUpperCase());
                     double harga = Double.parseDouble(parts[3]);
                     PropertyStatus status = PropertyStatus.valueOf(parts[4].toUpperCase());
+                    String imagePath = parts[5];
 
-                    Property p = new Property(id, nama, type, harga, status);
+                    Property p = new Property(id, nama, type, harga, status, imagePath);
                     listProperti.add(p);
                 }
             }
@@ -84,7 +85,7 @@ public class PropertyManager {
     public void saveProperties() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (Property p : listProperti) {
-                String line = p.getId() + "," + p.getNama() + "," + p.getType() + "," + p.getHarga() + "," + p.getStatus();
+                String line = p.getId() + "," + p.getNama() + "," + p.getType() + "," + p.getHarga() + "," + p.getStatus() + "," + p.getImagePath();
                 writer.write(line);
                 writer.newLine();
             }

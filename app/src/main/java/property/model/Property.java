@@ -6,15 +6,24 @@ public class Property {
     private PropertyType type;
     private double harga;
     private PropertyStatus status;
+    private String imagePath;
 
-    public Property(int id, String nama, PropertyType type, double harga, PropertyStatus status) {
+    public Property(int id, String nama, PropertyType type, double harga, PropertyStatus status, String imagePath) {
         this.id = id;
         this.nama = nama;
         this.type = type;
         this.harga = harga;
         this.status = status;
+        this.imagePath = imagePath;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
     
     public int getId() {
         return id;

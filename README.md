@@ -24,7 +24,7 @@ git clone https://github.com/Aii-Kay/ProMan
 cd ProMan
 ```
 
-2. Jalankan dengan Gradle (direkomendasikan)
+2. Jalankan dengan Gradle
 ``` bash
 // Pastikan telah menginstall Java dan Gradle
 ./gradlew run
